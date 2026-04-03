@@ -4,6 +4,8 @@
 
 **A rebuilt, fully functional version of Anthropic's Claude Code CLI**
 
+English | [中文](./README_zh.md)
+
 [![TypeScript](https://img.shields.io/badge/TypeScript-512K%2B_lines-3178C6?logo=typescript&logoColor=white)](#tech-stack)
 [![Bun](https://img.shields.io/badge/Runtime-Bun-f472b6?logo=bun&logoColor=white)](#tech-stack)
 [![React + Ink](https://img.shields.io/badge/UI-React_%2B_Ink-61DAFB?logo=react&logoColor=black)](#tech-stack)
@@ -22,6 +24,7 @@
 - [Building](#building)
 - [Project Structure](#project-structure)
 - [How It Works](#how-it-works)
+- [Unlocked Slash Commands](#unlocked-slash-commands)
 - [Notes](#notes)
 - [Disclaimer](#disclaimer)
 
@@ -166,9 +169,23 @@ The original Claude Code source depends on Bun's `bun:bundle` module for compile
 
 ---
 
+## Unlocked Slash Commands
+
+The original Claude Code ships with many slash commands hidden behind internal feature flags that are disabled in external builds. This project has reconstructed and fully unlocked the following commands so they work locally without any flag service:
+
+| Command | Description | Original Gate |
+| ------- | ----------- | ------------- |
+| `/brief` | Toggle brief-only (chat) mode — visible output is sent exclusively via `SendUserMessage` | `KAIROS` / `KAIROS_BRIEF` |
+| `/buddy` | Summon a virtual companion with deterministic traits generated from a seed PRNG | `BUDDY` |
+| `/fork` | Spawn a background sub-agent that inherits the full conversation context | `FORK_SUBAGENT` |
+
+For a comprehensive analysis of all 14 feature-gated commands (including which ones are fully implemented, partially stubbed, or missing), see [FEATURE_FLAG_COMMANDS_ANALYSIS.md](./FEATURE_FLAG_COMMANDS_ANALYSIS.md).
+
+---
+
 ## Notes
 
-- Features gated behind disabled flags (voice, bridge, daemon, coordinator, assistant/Kairos, etc.) are not functional.
+- Features gated behind disabled flags (voice, bridge, daemon, coordinator, assistant/Kairos, etc.) that have not been explicitly unlocked above are not functional.
 - The interactive REPL, `--print` mode, `--help`, and the full Commander option surface all work.
 - Authentication (API key and OAuth), Anthropic API calls, tool execution, MCP server integration, and the Ink-based terminal UI are preserved from the original source.
 
